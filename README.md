@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web Development Client
 
-## Getting Started
+This is my CS 5610 A1 project. I used Next.js, React, and TypeScript to build the Lab 1 HTML examples and the first version of Kambaz. A1 focuses on structure and navigation, so this is still a prototype.
 
-First, run the development server:
+Live site: https://webdev-client-drab.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Walking through the site
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The home URL takes you to the sign-in screen. Its Sign in link opens the dashboard, where three course cards lead to course Home pages. Inside a course, the navigation links to Modules and Assignments. Home shows the modules beside Course Status. The Modules page groups content by week and lesson.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The Assignments page lists A1, A2, and A3. Each assignment links to an editor with fields for its name, description, points, submission options, and dates. These are HTML screens; they do not save data yet.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The Labs link opens `/labs`, which has my name, section, GitHub link, and lab navigation. Lab 1 at `/labs/lab1` covers headings, paragraphs, lists, tables, images, forms, highlighted paragraphs and boxes, and links. Each topic has its own component under `app/labs/lab1/`, and the Lab 1 page brings them together. The Labs table of contents appears beside the lab pages through a shared layout.
 
-## Learn More
+The Kambaz pages are under `app/(kambaz)/`. The dashboard uses a `CourseCard` component for its three courses. The course layout uses the course ID in the URL so its navigation links stay within the selected course. The Assignments page uses an `AssignmentItem` component for each assignment.
 
-To learn more about Next.js, take a look at the following resources:
+## What I did myself and where AI helped
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I completed the A1 sections marked **On your own** myself: the personal heading and paragraphs, recipe and favorites lists, study schedule table, personal image and links, Student Profile form, highlighted examples, Lab 4 page and link, and the Assignments list and editor.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For the sections marked **With AI**, I used AI to help add the extra heading outline and paragraph, HTML tag list, Q4–Q10 and the updated average, an additional image and documentation link, form and highlighted component variations, the Lab 5 placeholder, and the Chapter 1 link in the Labs table of contents. I also used AI for explanations and troubleshooting while building the project.
