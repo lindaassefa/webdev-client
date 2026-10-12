@@ -7,15 +7,15 @@ export default function LabsLayout({
   children: ReactNode;
 }>) {
   return (
-    <table>
+    <table className="w-full table-fixed">
       <tbody>
         <tr>
           <td valign="top" width="150" className="w-[150px] min-w-[150px]">
             <TOC />
           </td>
 
-          <td valign="top" width="100%">
-            {children}
+          <td valign="top" className="min-w-0">
+            <div className="overflow-x-auto">{children}</div>
           </td>
         </tr>
       </tbody>
