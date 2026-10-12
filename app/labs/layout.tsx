@@ -10,7 +10,7 @@ export default function LabsLayout({
     <table>
       <tbody>
         <tr>
-          <td valign="top" width="150">
+          <td valign="top" width="150" className="w-[150px] min-w-[150px]">
             <TOC />
           </td>
 
