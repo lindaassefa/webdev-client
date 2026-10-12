@@ -32,7 +32,7 @@ export default function Dashboard() {
         <CourseCard
           id="CS9999"
           title="CS9999 Sample Course"
-          subtitle="AI-generated demonstration course"
+          subtitle="Assistant-generated sample — not my course"
           image="/images/reactjs.jpg"
         />
       </div>
