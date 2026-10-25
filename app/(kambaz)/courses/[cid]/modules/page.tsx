@@ -1,7 +1,13 @@
+"use client";
+
+import { useParams } from "next/navigation";
 import Lesson from "./Lesson";
 import Module from "./Module";
+import * as db from "../../../database";
 
 export default function Modules() {
+  const { cid } = useParams();
+  const modules = db.modules.filter((module) => module.course === cid);
   return (
     <div>
       <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -31,63 +37,13 @@ export default function Modules() {
         </button>
       </div>
       <ul id="wd-modules" className="m-0 list-none p-0">
-        <Module title="Week 1, Lecture 1 - Course Introduction, Syllabus, Agenda">
-          <Lesson title="LEARNING OBJECTIVES">
-            <li className="wd-content-item">Introduction to the course</li>
-            <li className="wd-content-item">
-              Learn what is Web Development
-            </li>
-          </Lesson>
-          <Lesson title="READING">
-            <li className="wd-content-item">
-              Full Stack Developer - Chapter 1 - Introduction
-            </li>
-            <li className="wd-content-item">
-              Full Stack Developer - Chapter 2 - Creating User Interfaces
-            </li>
-          </Lesson>
-          <Lesson title="SLIDES">
-            <li className="wd-content-item">
-              Introduction to Web Development
-            </li>
-            <li className="wd-content-item">
-              Creating an HTTP server with Node.js
-            </li>
-            <li className="wd-content-item">Creating a React Application</li>
-          </Lesson>
-        </Module>
-        <Module title="Week 2 - HTML">
-          <Lesson title="LEARNING OBJECTIVES">
-            <li className="wd-content-item">
-              Learn how to create user interfaces with HTML
-            </li>
-          </Lesson>
-          <Lesson title="READING">
-            <li className="wd-content-item">
-              HTML headings, lists, tables, and forms
-            </li>
-          </Lesson>
-        </Module>
-        <Module title="Week 3 - CSS">
-          <Lesson title="LEARNING OBJECTIVES">
-            <li className="wd-content-item">
-              Learn the basics of styling webpages with CSS
-            </li>
-          </Lesson>
-          <Lesson title="READING">
-            <li className="wd-content-item">
-              CSS selectors and the box model
-            </li>
-          </Lesson>
-        </Module>
-        <Module title="Extra resources">
-          <Lesson title="Study group">
-            <li className="wd-content-item">Class Notes</li>
-          </Lesson>
-        </Module>
-        <Module title="Sample module (AI)">
-          <Lesson title="Sample lesson (AI)" />
-        </Module>
+        {modules.map((module) => (
+          <Module key={module._id} title={module.name}>
+            {module.lessons?.map((lesson) => (
+              <Lesson key={lesson._id} title={lesson.name} />
+            ))}
+          </Module>
+        ))}
       </ul>
     </div>
   );

@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import CourseNavigation from "./Navigation";
+import Breadcrumb from "./Breadcrumb";
+import { courses } from "../../database";
 
 export default async function CoursesLayout({
   children,
@@ -9,10 +11,13 @@ export default async function CoursesLayout({
   params: Promise<{ cid: string }>;
 }>) {
   const { cid } = await params;
+  const course = courses.find((c) => c._id === cid);
 
   return (
     <div id="wd-courses">
-      <h2>Courses {cid}</h2>
+      <h2>
+        <Breadcrumb course={course} />
+      </h2>
       <hr />
       <div className="flex gap-4">
         <div className="hidden w-[140px] shrink-0 md:block">

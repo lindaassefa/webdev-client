@@ -1,4 +1,5 @@
 import Link from "next/link";
+import * as db from "../../../../database";
 
 const field =
   "mb-1 block text-sm font-medium";
@@ -10,7 +11,8 @@ export default async function AssignmentEditor({
 }: {
   params: Promise<{ cid: string; aid: string }>;
 }) {
-  const { cid } = await params;
+  const { cid, aid } = await params;
+  const assignment = db.assignments.find((a) => a._id === aid);
 
   return (
     <div id="wd-assignments-editor" className="max-w-3xl">
@@ -20,7 +22,7 @@ export default async function AssignmentEditor({
         </label>
         <input
           id="wd-name"
-          defaultValue="A1 - ENV + HTML"
+          defaultValue={assignment?.title ?? ""}
           className={control}
         />
       </div>
@@ -32,7 +34,7 @@ export default async function AssignmentEditor({
         <textarea
           id="wd-description"
           rows={5}
-          defaultValue="The assignment is available online. Submit a link to the landing page of your web application running on Vercel."
+          defaultValue={assignment?.description ?? ""}
           className={control}
         />
       </div>
@@ -44,7 +46,7 @@ export default async function AssignmentEditor({
         <input
           id="wd-points"
           type="number"
-          defaultValue={125}
+          defaultValue={assignment?.points ?? 100}
           className={control}
         />
       </div>
@@ -136,7 +138,7 @@ export default async function AssignmentEditor({
         <input
           id="wd-due-date"
           type="date"
-          defaultValue="2026-09-27"
+          defaultValue={assignment?.due}
           className={control}
         />
       </div>
@@ -148,7 +150,7 @@ export default async function AssignmentEditor({
         <input
           id="wd-available-from"
           type="date"
-          defaultValue="2026-09-14"
+          defaultValue={assignment?.available}
           className={control}
         />
       </div>
