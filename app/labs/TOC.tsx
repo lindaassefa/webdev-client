@@ -47,9 +47,9 @@ const LINKS = [
     match: () => false,
   },
   {
-    href: "https://webdev-client.vercel.app/book/ch1",
+    href: "https://webdev-client.vercel.app/book/ch3",
     id: "wd-toc-book-link",
-    label: "Chapter 1",
+    label: "Chapter 3",
     match: () => false,
   },
 ];

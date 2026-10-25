@@ -78,8 +78,12 @@ export default function Lab3() {
       <Add a={3} b={4} />
       {/* on your own */}
       <Add a={10} b={20} />
+      <Add a={7} b={8} />
       <h4>Square of 4</h4>
       <Square>4</Square>
+      <p>
+        Square of 5 = <Square>5</Square>
+      </p>
       <hr />
       {/* on your own */}
       <h4>Square of 9</h4>
@@ -91,6 +95,8 @@ export default function Lab3() {
       <br />
       {/* on your own */}
       <Highlight>I am working through chapter 3 one section at a time.</Highlight>
+      <br />
+      <Highlight>Children can be any JSX</Highlight>
       <PathParameters />
       <TodoList />
     </div>

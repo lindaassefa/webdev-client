@@ -5,6 +5,7 @@ export default function Classes() {
   const dangerous = true;
   // on your own
   const favorite = true;
+  const shade = "green";
   return (
     <div id="wd-classes">
       <h2>Classes</h2>
@@ -30,6 +31,9 @@ export default function Classes() {
         className={`${favorite ? "wd-bg-green" : "wd-bg-yellow"} wd-fg-black wd-padding-10px`}
       >
         Green background
+      </div>
+      <div className={`wd-bg-${shade} wd-fg-black wd-padding-10px`}>
+        Dynamic Green background
       </div>
       <hr />
     </div>
