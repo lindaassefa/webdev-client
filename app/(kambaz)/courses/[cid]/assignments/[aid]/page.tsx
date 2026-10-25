@@ -12,7 +12,9 @@ export default async function AssignmentEditor({
   params: Promise<{ cid: string; aid: string }>;
 }) {
   const { cid, aid } = await params;
+  // on your own
   const assignment = db.assignments.find((a) => a._id === aid);
+  // with AI
 
   return (
     <div id="wd-assignments-editor" className="max-w-3xl">

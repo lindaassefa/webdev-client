@@ -4,7 +4,9 @@ export default function Spreading() {
   const obj1 = { a: 1, b: 2, c: 3 };
   const obj2 = { ...obj1, d: 4, e: 5, f: 6 };
   const obj3 = { ...obj1, b: 4 };
+  // on your own
   const obj4 = { ...obj2, a: 9 };
+  // with AI
   return (
     <div id="wd-spreading">
       <h2>Spread Operator</h2>
@@ -15,7 +17,9 @@ export default function Spreading() {
       {JSON.stringify(obj1)} <br />
       {JSON.stringify(obj2)} <br />
       {JSON.stringify(obj3)} <br />
+      {/* on your own */}
       obj4 = {JSON.stringify(obj4)} <br />
+      {/* with AI */}
       <hr />
     </div>
   );

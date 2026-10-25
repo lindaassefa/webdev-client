@@ -9,7 +9,9 @@ export default function JsonStringify() {
     <div id="wd-json-stringify">
       <h3>JSON Stringify</h3>
       squares = {JSON.stringify(squares)}
+      {/* on your own */}
       <pre>{JSON.stringify(notebook, null, 2)}</pre>
+      {/* with AI */}
       <hr />
     </div>
   );

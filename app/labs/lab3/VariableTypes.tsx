@@ -6,10 +6,12 @@ export default function VariableTypes() {
   const isNumber = typeof numberVariable;
   const isString = typeof stringVariable;
   const isBoolean = typeof booleanVariable;
+  // on your own
   const secondNumber = 7;
   const secondString = "Lab notes";
   const secondNumberType = typeof secondNumber;
   const secondStringType = typeof secondString;
+  // with AI
   return (
     <div id="wd-variable-types">
       <h4>Variables Types</h4>
@@ -20,10 +22,12 @@ export default function VariableTypes() {
       isNumber = {isNumber} <br />
       isString = {isString} <br />
       isBoolean = {isBoolean} <br />
+      {/* on your own */}
       secondNumber = {secondNumber} <br />
       secondNumberType = {secondNumberType} <br />
       secondString = {secondString} <br />
       secondStringType = {secondStringType}
+      {/* with AI */}
       <hr />
     </div>
   );

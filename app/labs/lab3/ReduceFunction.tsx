@@ -1,12 +1,16 @@
 export default function ReduceFunction() {
   const numbers = [1, 2, 3, 4, 5];
   const sum = numbers.reduce((total, n) => total + n, 0);
+  // on your own
   const product = numbers.reduce((total, n) => total * n, 1);
+  // with AI
   return (
     <div id="wd-reduce-function">
       <h4>Reduce Function</h4>
       sum = {sum} <br />
+      {/* on your own */}
       product = {product}
+      {/* with AI */}
       <hr />
     </div>
   );

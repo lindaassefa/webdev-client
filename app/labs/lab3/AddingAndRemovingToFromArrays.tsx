@@ -8,7 +8,9 @@ export default function AddingAndRemovingToFromArrays() {
   numberArray1.push(6);
   stringArray1.push("string3");
   todoArray.push(<li key={3}>Walk the dogs</li>);
+  // on your own
   todoArray.push(<li key={4}>Review notes</li>);
+  // with AI
   numberArray1.splice(2, 1);
   stringArray1.splice(1, 1);
   return (

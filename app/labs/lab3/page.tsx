@@ -76,10 +76,13 @@ export default function Lab3() {
       <ClientComponentDemo />
       <ServerComponentDemo />
       <Add a={3} b={4} />
+      {/* on your own */}
       <Add a={10} b={20} />
+      {/* with AI */}
       <h4>Square of 4</h4>
       <Square>4</Square>
       <hr />
+      {/* on your own */}
       <h4>Square of 9</h4>
       <Square>9</Square>
       <hr />
@@ -87,7 +90,9 @@ export default function Lab3() {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </Highlight>
       <br />
+      {/* on your own */}
       <Highlight>I am working through chapter 3 one section at a time.</Highlight>
+      {/* with AI */}
       <PathParameters />
       <TodoList />
     </div>

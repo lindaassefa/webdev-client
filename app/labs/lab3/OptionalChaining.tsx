@@ -18,7 +18,9 @@ export default function OptionalChaining() {
       <h4>Optional Chaining</h4>
       house.address?.city = {house.address?.city} <br />
       missing?.prop ?? &quot;n/a&quot; = {missing?.prop ?? "n/a"} <br />
+      {/* on your own */}
       house.garage?.cars ?? 0 = {house.garage?.cars ?? 0}
+      {/* with AI */}
       <hr />
     </div>
   );

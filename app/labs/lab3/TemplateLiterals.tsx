@@ -6,8 +6,10 @@ export default function TemplateLiterals() {
   const greeting1 = `Welcome home ${username}`;
   const loggedIn = false;
   const greeting2 = `Logged in: ${loggedIn ? "Yes" : "No"}`;
+  // on your own
   const published = true;
   const myStatus = `Linda's notes are ${published ? "published" : "hidden"}`;
+  // with AI
   return (
     <div id="wd-template-literals">
       <h4>Template Literals</h4>
@@ -15,7 +17,9 @@ export default function TemplateLiterals() {
       result2 = {result2} <br />
       greeting1 = {greeting1} <br />
       greeting2 = {greeting2} <br />
+      {/* on your own */}
       myStatus = {myStatus}
+      {/* with AI */}
       <hr />
     </div>
   );

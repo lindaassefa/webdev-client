@@ -4,8 +4,10 @@ export default function IncludesSomeEvery() {
   const includes8 = numbers.includes(8);
   const someGreaterThan4 = numbers.some((n) => n > 4);
   const everyGreaterThan0 = numbers.every((n) => n > 0);
+  // on your own
   const everyGreaterThan4 = numbers.every((n) => n > 4);
   const someEquals1 = numbers.some((n) => n === 1);
+  // with AI
   return (
     <div id="wd-includes-some-every">
       <h4>Includes, Some, Every</h4>
@@ -13,8 +15,10 @@ export default function IncludesSomeEvery() {
       includes(8) = {includes8 + ""} <br />
       some(n &gt; 4) = {someGreaterThan4 + ""} <br />
       every(n &gt; 0) = {everyGreaterThan0 + ""} <br />
+      {/* on your own */}
       every(n &gt; 4) = {everyGreaterThan4 + ""} <br />
       some(n === 1) = {someEquals1 + ""}
+      {/* with AI */}
       <hr />
     </div>
   );

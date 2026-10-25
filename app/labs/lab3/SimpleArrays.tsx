@@ -7,7 +7,9 @@ export default function SimpleArrays() {
   const htmlArray1 = [
     <li key={1}>Buy milk</li>,
     <li key={2}>Feed the pets</li>,
+    // on your own
     <li key={3}>Read chapter 3</li>,
+    // with AI
   ];
   const variableArray1 = [
     functionScoped,

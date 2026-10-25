@@ -1,7 +1,13 @@
 export default function MapFunction() {
   const numberArray1 = [1, 2, 3, 4, 5, 6];
   const square = (a: number) => a * a;
-  const todos = ["Buy milk", "Feed the pets", "Read chapter 3"];
+  const todos = [
+    "Buy milk",
+    "Feed the pets",
+    // on your own
+    "Read chapter 3",
+    // with AI
+  ];
   const squares = numberArray1.map(square);
   const cubes = numberArray1.map((a) => a * a * a);
   return (

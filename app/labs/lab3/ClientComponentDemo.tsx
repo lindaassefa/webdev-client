@@ -8,7 +8,9 @@ export default function ClientComponentDemo() {
     <div id="wd-client-component-demo">
       <h1>Client Component Demo</h1>
       <p>Current pathname: {pathname}</p>
+      {/* on your own */}
       <p>Pathname length: {pathname.length}</p>
+      {/* with AI */}
     </div>
   );
 }

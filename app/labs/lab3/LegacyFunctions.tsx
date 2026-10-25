@@ -2,9 +2,11 @@ function add(a: number, b: number) {
   return a + b;
 }
 
+// on your own
 function subtract(a: number, b: number) {
   return a - b;
 }
+// with AI
 
 export default function LegacyFunctions() {
   const twoPlusFour = add(2, 4);
@@ -16,8 +18,10 @@ export default function LegacyFunctions() {
       <h5>Legacy ES5 functions</h5>
       twoPlusFour = {twoPlusFour} <br />
       add(2, 4) = {add(2, 4)} <br />
+      {/* on your own */}
       fourMinusOne = {fourMinusOne} <br />
       subtract(4, 1) = {subtract(4, 1)}
+      {/* with AI */}
       <hr />
     </div>
   );

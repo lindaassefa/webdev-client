@@ -3,9 +3,11 @@ export default function FunctionDestructing() {
   const sum = add(1, 2);
   const subtract = ({ a, b }: { a: number; b: number }) => a - b;
   const difference = subtract({ a: 4, b: 2 });
+  // on your own
   const multiply = ({ a, b }: { a: number; b: number }) => a * b;
   const product = multiply({ a: 3, b: 4 });
   const greet = (name = "Ada") => name;
+  // with AI
   return (
     <div id="wd-function-destructing">
       <h2>Function Destructing</h2>
@@ -15,8 +17,10 @@ export default function FunctionDestructing() {
       {"const difference = subtract({ a: 4, b: 2 });"} <br />
       sum = {sum} <br />
       difference = {difference} <br />
+      {/* on your own */}
       product = {product} <br />
       greet() = {greet()}
+      {/* with AI */}
       <hr />
     </div>
   );

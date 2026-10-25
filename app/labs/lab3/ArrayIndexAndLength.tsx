@@ -7,7 +7,9 @@ export default function ArrayIndexAndLength() {
       <h4>Array index and length</h4>
       length1 = {length1} <br />
       index1 = {index1} <br />
+      {/* on your own */}
       indexOf(9) = {numberArray1.indexOf(9)}
+      {/* with AI */}
       <hr />
     </div>
   );

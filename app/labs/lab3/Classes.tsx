@@ -3,7 +3,9 @@ import "./Classes.css";
 export default function Classes() {
   const color = "blue";
   const dangerous = true;
+  // on your own
   const favorite = true;
+  // with AI
   return (
     <div id="wd-classes">
       <h2>Classes</h2>
@@ -24,11 +26,13 @@ export default function Classes() {
       >
         Dangerous background
       </div>
+      {/* on your own */}
       <div
         className={`${favorite ? "wd-bg-green" : "wd-bg-yellow"} wd-fg-black wd-padding-10px`}
       >
         Green background
       </div>
+      {/* with AI */}
       <hr />
     </div>
   );

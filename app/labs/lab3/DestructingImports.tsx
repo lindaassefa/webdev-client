@@ -34,11 +34,13 @@ export default function DestructingImports() {
             <td>Matematica.divide(8, 2) = {Matematica.divide(8, 2)}</td>
             <td>divide(8, 2) = {divide(8, 2)}</td>
           </tr>
+          {/* on your own */}
           <tr>
             <td>Math.add(10, 20) = {Math.add(10, 20)}</td>
             <td>Matematica.add(10, 20) = {Matematica.add(10, 20)}</td>
             <td>add(10, 20) = {add(10, 20)}</td>
           </tr>
+          {/* with AI */}
         </tbody>
       </table>
       <hr />
