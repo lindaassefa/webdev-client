@@ -2,7 +2,6 @@ import TodoItem from "./TodoItem";
 import todos from "./todos.json";
 
 export default function TodoList() {
-  // on your own
   console.log(todos);
   return (
     <>

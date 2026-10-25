@@ -10,7 +10,12 @@ export default function Breadcrumb({
   const pathname = usePathname() ?? "";
   const section = pathname.split("/").pop() ?? "";
   // on your own
-  const label = section.charAt(0).toUpperCase() + section.slice(1);
+  let label = section.charAt(0).toUpperCase() + section.slice(1);
+  if (pathname.includes("/people")) {
+    label = "People";
+  } else if (pathname.includes("/assignments/")) {
+    label = "Assignments";
+  }
   return (
     <span>
       {course?.name} &gt; {label}
