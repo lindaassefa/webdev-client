@@ -10,7 +10,6 @@ export default function AddingAndRemovingToFromArrays() {
   todoArray.push(<li key={3}>Walk the dogs</li>);
   // on your own
   todoArray.push(<li key={4}>Review notes</li>);
-  // with AI
   numberArray1.splice(2, 1);
   stringArray1.splice(1, 1);
   return (

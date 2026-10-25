@@ -6,7 +6,6 @@ const subtract = (a: number, b: number) => {
 const add = (a: number, b: number) => {
   return a + b;
 };
-// with AI
 
 export default function ArrowFunctions() {
   const threeMinusOne = subtract(3, 1);
@@ -18,7 +17,6 @@ export default function ArrowFunctions() {
       subtract(3, 1) = {subtract(3, 1)} <br />
       {/* on your own */}
       add(2, 4) = {add(2, 4)}
-      {/* with AI */}
       <hr />
     </div>
   );

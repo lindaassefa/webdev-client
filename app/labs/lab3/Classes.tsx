@@ -5,7 +5,6 @@ export default function Classes() {
   const dangerous = true;
   // on your own
   const favorite = true;
-  // with AI
   return (
     <div id="wd-classes">
       <h2>Classes</h2>
@@ -32,7 +31,6 @@ export default function Classes() {
       >
         Green background
       </div>
-      {/* with AI */}
       <hr />
     </div>
   );

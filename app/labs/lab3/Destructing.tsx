@@ -1,10 +1,9 @@
 export default function Destructing() {
-  // on your own
   const person = { name: "John", age: 25, city: "Boston" };
   const { name, age, city } = person;
+  // on your own
   const numbers = ["one", "two", "three", "four"];
   const [first, second, third, fourth] = numbers;
-  // with AI
   return (
     <div id="wd-destructing">
       <h2>Destructing</h2>
@@ -22,7 +21,6 @@ export default function Destructing() {
       third = {third} <br />
       {/* on your own */}
       fourth = {fourth}
-      {/* with AI */}
       <hr />
     </div>
   );

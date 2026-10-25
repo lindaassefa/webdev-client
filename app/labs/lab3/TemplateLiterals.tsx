@@ -9,7 +9,6 @@ export default function TemplateLiterals() {
   // on your own
   const published = true;
   const myStatus = `Linda's notes are ${published ? "published" : "hidden"}`;
-  // with AI
   return (
     <div id="wd-template-literals">
       <h4>Template Literals</h4>
@@ -19,7 +18,6 @@ export default function TemplateLiterals() {
       greeting2 = {greeting2} <br />
       {/* on your own */}
       myStatus = {myStatus}
-      {/* with AI */}
       <hr />
     </div>
   );

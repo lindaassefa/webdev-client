@@ -8,7 +8,6 @@ export default function VariablesAndConstants() {
   // eslint-disable-next-line prefer-const
   let myName = "Linda";
   const hello = "Hello " + myName;
-  // with AI
   return (
     <div id="wd-variables-and-constants">
       <h4>Variables and Constants</h4>
@@ -18,7 +17,6 @@ export default function VariablesAndConstants() {
       {/* on your own */}
       myName = {myName} <br />
       hello = {hello}
-      {/* with AI */}
       <hr />
     </div>
   );

@@ -78,7 +78,6 @@ export default function Lab3() {
       <Add a={3} b={4} />
       {/* on your own */}
       <Add a={10} b={20} />
-      {/* with AI */}
       <h4>Square of 4</h4>
       <Square>4</Square>
       <hr />
@@ -92,7 +91,6 @@ export default function Lab3() {
       <br />
       {/* on your own */}
       <Highlight>I am working through chapter 3 one section at a time.</Highlight>
-      {/* with AI */}
       <PathParameters />
       <TodoList />
     </div>

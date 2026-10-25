@@ -12,7 +12,6 @@ export default function NullUndefined() {
       String(undefined) = {String(undefined)} <br />
       {/* on your own */}
       nullValue ?? &quot;default&quot; = {nullValue ?? "default"}
-      {/* with AI */}
       <hr />
     </div>
   );

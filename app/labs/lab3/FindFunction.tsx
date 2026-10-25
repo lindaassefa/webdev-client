@@ -5,7 +5,6 @@ export default function FindFunction() {
   const string3 = stringArray1.find((a) => a === "string3");
   // on your own
   const missing = numberArray1.find((a) => a === 99);
-  // with AI
   return (
     <div id="wd-find-function">
       <h4>Find Function</h4>
@@ -13,7 +12,6 @@ export default function FindFunction() {
       string3 = {string3} <br />
       {/* on your own */}
       missing = {String(missing)}
-      {/* with AI */}
       <hr />
     </div>
   );

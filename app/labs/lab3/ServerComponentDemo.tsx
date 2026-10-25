@@ -6,7 +6,6 @@ export default function ServerComponentDemo() {
   const nodeVersion = process.version;
   // on your own
   const arch = process.arch;
-  // with AI
   const serverRenderTime = new Date().toLocaleTimeString();
   const lab3Dir = path.join(process.cwd(), "app/labs/lab3");
   let files: string[] = [];

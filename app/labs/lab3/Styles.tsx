@@ -17,7 +17,6 @@ export default function Styles() {
     ...colorBlack,
     ...padding10px,
   };
-  // with AI
   return (
     <div id="wd-styles">
       <h2>Styles</h2>
@@ -34,7 +33,6 @@ export default function Styles() {
       <div style={bgBlue}>Blue background</div>
       {/* on your own */}
       <div style={bgGreen}>Green background</div>
-      {/* with AI */}
     </div>
   );
 }

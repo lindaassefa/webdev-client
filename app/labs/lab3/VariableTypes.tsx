@@ -11,7 +11,6 @@ export default function VariableTypes() {
   const secondString = "Lab notes";
   const secondNumberType = typeof secondNumber;
   const secondStringType = typeof secondString;
-  // with AI
   return (
     <div id="wd-variable-types">
       <h4>Variables Types</h4>
@@ -27,7 +26,6 @@ export default function VariableTypes() {
       secondNumberType = {secondNumberType} <br />
       secondString = {secondString} <br />
       secondStringType = {secondStringType}
-      {/* with AI */}
       <hr />
     </div>
   );

@@ -17,7 +17,6 @@ export default function House() {
   console.log(house);
   // on your own
   console.log(house.owners);
-  // with AI
   return (
     <div id="wd-house">
       <h4>House</h4>
@@ -30,7 +29,6 @@ export default function House() {
       {house.owners.join(", ")}
       <h5>yearBuilt</h5>
       {house.yearBuilt}
-      {/* with AI */}
       <h5>Number of properties</h5>
       {Object.keys(house).length}
       <h5>Data</h5>

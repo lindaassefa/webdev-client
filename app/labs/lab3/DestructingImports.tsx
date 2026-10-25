@@ -40,7 +40,6 @@ export default function DestructingImports() {
             <td>Matematica.add(10, 20) = {Matematica.add(10, 20)}</td>
             <td>add(10, 20) = {add(10, 20)}</td>
           </tr>
-          {/* with AI */}
         </tbody>
       </table>
       <hr />

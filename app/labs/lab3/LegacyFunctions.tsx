@@ -6,7 +6,6 @@ function add(a: number, b: number) {
 function subtract(a: number, b: number) {
   return a - b;
 }
-// with AI
 
 export default function LegacyFunctions() {
   const twoPlusFour = add(2, 4);
@@ -21,7 +20,6 @@ export default function LegacyFunctions() {
       {/* on your own */}
       fourMinusOne = {fourMinusOne} <br />
       subtract(4, 1) = {subtract(4, 1)}
-      {/* with AI */}
       <hr />
     </div>
   );

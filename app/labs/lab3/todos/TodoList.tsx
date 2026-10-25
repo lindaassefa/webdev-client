@@ -2,12 +2,11 @@ import TodoItem from "./TodoItem";
 import todos from "./todos.json";
 
 export default function TodoList() {
+  // on your own
   console.log(todos);
   return (
     <>
       <h3>Todo List</h3>
-      {/* on your own */}
-      {/* with AI */}
       <ul className="list-none p-0">
         {todos.map((todo) => (
           <TodoItem key={todo.title} todo={todo} />

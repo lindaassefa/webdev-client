@@ -3,7 +3,6 @@ export default function ForLoops() {
   const stringArray2: string[] = [];
   // on your own
   const lowerArray: string[] = [];
-  // with AI
   for (let i = 0; i < stringArray1.length; i++) {
     const string1 = stringArray1[i];
     stringArray2.push(string1.toUpperCase());
@@ -15,7 +14,6 @@ export default function ForLoops() {
       stringArray2 = {stringArray2} <br />
       {/* on your own */}
       lowerArray = {lowerArray}
-      {/* with AI */}
       <hr />
     </div>
   );

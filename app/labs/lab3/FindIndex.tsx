@@ -5,7 +5,6 @@ export default function FindIndex() {
   const string3Index = stringArray1.findIndex((a) => a === "string3");
   // on your own
   const threeIndex = numberArray1.findIndex((a) => a === 3);
-  // with AI
   return (
     <div id="wd-find-index">
       <h4>Find Index Function</h4>
@@ -13,7 +12,6 @@ export default function FindIndex() {
       string3Index = {string3Index} <br />
       {/* on your own */}
       threeIndex = {threeIndex}
-      {/* with AI */}
       <hr />
     </div>
   );

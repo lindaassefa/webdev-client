@@ -9,7 +9,6 @@ export default function SimpleArrays() {
     <li key={2}>Feed the pets</li>,
     // on your own
     <li key={3}>Read chapter 3</li>,
-    // with AI
   ];
   const variableArray1 = [
     functionScoped,

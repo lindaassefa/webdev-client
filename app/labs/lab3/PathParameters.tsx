@@ -8,7 +8,6 @@ export default function PathParameters() {
       <Link href="/labs/lab3/add/3/4">3 + 4</Link> <br />
       {/* on your own */}
       <Link href="/labs/lab3/add/12/30">12 + 30</Link>
-      {/* with AI */}
     </div>
   );
 }

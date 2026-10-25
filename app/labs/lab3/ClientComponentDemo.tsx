@@ -10,7 +10,6 @@ export default function ClientComponentDemo() {
       <p>Current pathname: {pathname}</p>
       {/* on your own */}
       <p>Pathname length: {pathname.length}</p>
-      {/* with AI */}
     </div>
   );
 }

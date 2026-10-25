@@ -9,7 +9,6 @@ export default function ArrayIndexAndLength() {
       index1 = {index1} <br />
       {/* on your own */}
       indexOf(9) = {numberArray1.indexOf(9)}
-      {/* with AI */}
       <hr />
     </div>
   );

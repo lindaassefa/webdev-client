@@ -6,7 +6,6 @@ export default function MapFunction() {
     "Feed the pets",
     // on your own
     "Read chapter 3",
-    // with AI
   ];
   const squares = numberArray1.map(square);
   const cubes = numberArray1.map((a) => a * a * a);
