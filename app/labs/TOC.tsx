@@ -1,55 +1,104 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const LINKS = [
+  {
+    href: "/labs",
+    id: "wd-home-link",
+    label: "Labs Home",
+    match: (p: string) => p === "/labs",
+  },
+  {
+    href: "/labs/lab1",
+    id: "wd-lab1-link",
+    label: "Lab 1",
+    match: (p: string) => p.endsWith("/lab1") || p.includes("/lab1/"),
+  },
+  {
+    href: "/labs/lab2",
+    id: "wd-lab2-link",
+    label: "Lab 2",
+    match: (p: string) => p.includes("/lab2"),
+  },
+  {
+    href: "/labs/lab3",
+    id: "wd-lab3-link",
+    label: "Lab 3",
+    match: (p: string) => p.includes("/lab3"),
+  },
+  {
+    href: "/labs/lab4",
+    id: "wd-lab4-link",
+    label: "Lab 4",
+    match: (p: string) => p.endsWith("/lab4") || p.includes("/lab4/"),
+  },
+  {
+    href: "/labs/lab5",
+    id: "wd-lab5-link",
+    label: "Lab 5",
+    match: (p: string) => p.endsWith("/lab5") || p.includes("/lab5/"),
+  },
+  {
+    href: "/",
+    id: "wd-kambaz-link",
+    label: "Kambaz",
+    match: () => false,
+  },
+  {
+    href: "https://webdev-client.vercel.app/book/ch1",
+    id: "wd-toc-book-link",
+    label: "Chapter 1",
+    match: () => false,
+  },
+];
+
+const activeStyle = {
+  backgroundColor: "#2563eb",
+  color: "white",
+  borderRadius: "4px",
+  padding: "2px 8px",
+  textDecoration: "none",
+};
 
 export default function TOC() {
+  const pathname = usePathname() ?? "";
   return (
     <div id="wd-labs-toc">
       <h3>Labs</h3>
-
       <ul>
-        <li>
-          <Link href="/labs" id="wd-home-link">
-            Labs Home
-          </Link>
-        </li>
-
-        <li>
-          <Link href="/labs/lab1">Lab 1</Link>
-        </li>
-
-        <li>
-          <Link href="/labs/lab2">Lab 2</Link>
-        </li>
-
-        <li>
-          <Link href="/labs/lab3">Lab 3</Link>
-        </li>
-
-        <li>
-          <Link href="/labs/lab4">Lab 4</Link>
-        </li>
-
-        <li>
-          <Link href="/labs/lab5">Lab 5</Link>
-        </li>
-
-        <li>
-          <Link href="/" id="wd-kambaz-link">
-            Kambaz
-          </Link>
-        </li>
-
-        <li>
-          <a
-            href="https://webdev-client.vercel.app/book/ch1"
-            id="wd-toc-book-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Chapter 1
-          </a>
-        </li>
+        {LINKS.map((link) => {
+          const active = link.match(pathname);
+          const external = link.href.startsWith("http");
+          if (external) {
+            return (
+              <li key={link.id}>
+                <a
+                  href={link.href}
+                  id={link.id}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          }
+          return (
+            <li key={link.id}>
+              <Link
+                href={link.href}
+                id={link.id}
+                style={active ? activeStyle : undefined}
+                aria-current={active ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
-
       <p>Linda&apos;s goal: learn by building one section at a time.</p>
     </div>
   );
