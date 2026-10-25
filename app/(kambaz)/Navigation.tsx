@@ -4,6 +4,7 @@ import { AiOutlineDashboard } from "react-icons/ai";
 import { LiaBookSolid, LiaCogSolid } from "react-icons/lia";
 import { FaInbox, FaRegCircleUser, FaCircleQuestion } from "react-icons/fa6";
 import { LuCalendar } from "react-icons/lu";
+import { IoCalendarOutline } from "react-icons/io5";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,6 +14,7 @@ const LINKS = [
   { label: "Calendar", path: "/calendar", icon: LuCalendar },
   { label: "Inbox", path: "/inbox", icon: FaInbox },
   { label: "Labs", path: "/labs", icon: LiaCogSolid },
+  { label: "History", path: "/history", icon: IoCalendarOutline },
   { label: "Help", path: "/labs", icon: FaCircleQuestion },
 ];
 

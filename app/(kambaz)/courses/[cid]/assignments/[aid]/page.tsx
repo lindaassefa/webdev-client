@@ -26,6 +26,7 @@ export default async function AssignmentEditor({
           defaultValue={assignment?.title ?? ""}
           className={control}
         />
+        <p>Assignment id: {aid}</p>
       </div>
 
       <div className="mb-4">

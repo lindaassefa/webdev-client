@@ -13,5 +13,6 @@
   { "_id": "12", "user": "456", "course": "RS103" },
   { "_id": "13", "user": "678", "course": "RS103" },
   { "_id": "14", "user": "789", "course": "RS103" },
-  { "_id": "15", "user": "890", "course": "RS103" }
+  { "_id": "15", "user": "890", "course": "RS103" },
+  { "_id": "16", "user": "567", "course": "RS102" }
 ]

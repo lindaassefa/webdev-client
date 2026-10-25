@@ -16,7 +16,7 @@ export default async function CoursesLayout({
   return (
     <div id="wd-courses">
       <h2>
-        <Breadcrumb course={course} />
+        <Breadcrumb course={course} /> <span>({course?._id})</span>
       </h2>
       <hr />
       <div className="flex gap-4">

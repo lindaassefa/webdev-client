@@ -79,5 +79,14 @@
     "points": 100,
     "due": "2024-05-27",
     "available": "2024-05-20"
+  },
+  {
+    "_id": "A204",
+    "title": "A4",
+    "course": "RS102",
+    "description": "Explain how wing shape changes lift and drag in a short aerodynamics note.",
+    "points": 100,
+    "due": "2024-06-03",
+    "available": "2024-05-27"
   }
 ]
