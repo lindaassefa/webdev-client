@@ -7,6 +7,10 @@ const add = (a: number, b: number) => {
   return a + b;
 };
 
+const multiply = (a: number, b: number) => {
+  return a * b;
+};
+
 export default function ArrowFunctions() {
   const threeMinusOne = subtract(3, 1);
   console.log(threeMinusOne);
@@ -16,7 +20,8 @@ export default function ArrowFunctions() {
       threeMinusOne = {threeMinusOne} <br />
       subtract(3, 1) = {subtract(3, 1)} <br />
       {/* on your own */}
-      add(2, 4) = {add(2, 4)}
+      add(2, 4) = {add(2, 4)} <br />
+      multiply(3, 4) = {multiply(3, 4)}
       <hr />
     </div>
   );

@@ -11,6 +11,8 @@ export default function VariableTypes() {
   const secondString = "Lab notes";
   const secondNumberType = typeof secondNumber;
   const secondStringType = typeof secondString;
+  const sampleCount = 42;
+  const sampleLabel = "Lab 3";
   return (
     <div id="wd-variable-types">
       <h4>Variables Types</h4>
@@ -25,7 +27,11 @@ export default function VariableTypes() {
       secondNumber = {secondNumber} <br />
       secondNumberType = {secondNumberType} <br />
       secondString = {secondString} <br />
-      secondStringType = {secondStringType}
+      secondStringType = {secondStringType} <br />
+      sampleCount = {sampleCount} <br />
+      typeof sampleCount = {typeof sampleCount} <br />
+      sampleLabel = {sampleLabel} <br />
+      typeof sampleLabel = {typeof sampleLabel}
       <hr />
     </div>
   );

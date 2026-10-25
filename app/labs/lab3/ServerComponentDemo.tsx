@@ -23,7 +23,7 @@ export default function ServerComponentDemo() {
       <h2>Server Information</h2>
       <pre>
         {JSON.stringify(
-          { platform, nodeVersion, arch, serverRenderTime },
+          { platform, nodeVersion, arch, serverRenderTime, pid: process.pid },
           null,
           2,
         )}

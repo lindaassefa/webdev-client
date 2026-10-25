@@ -9,6 +9,7 @@ export default function TemplateLiterals() {
   // on your own
   const published = true;
   const myStatus = `Linda's notes are ${published ? "published" : "hidden"}`;
+  const courseStatus = `RS101 published: ${published ? "Yes" : "No"}`;
   return (
     <div id="wd-template-literals">
       <h4>Template Literals</h4>
@@ -16,6 +17,7 @@ export default function TemplateLiterals() {
       result2 = {result2} <br />
       greeting1 = {greeting1} <br />
       greeting2 = {greeting2} <br />
+      courseStatus = {courseStatus} <br />
       {/* on your own */}
       myStatus = {myStatus}
       <hr />

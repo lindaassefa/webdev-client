@@ -17,6 +17,11 @@ export default function Styles() {
     ...colorBlack,
     ...padding10px,
   };
+  const bgGray = {
+    backgroundColor: "lightgray",
+    ...colorBlack,
+    ...padding10px,
+  };
   return (
     <div id="wd-styles">
       <h2>Styles</h2>
@@ -33,6 +38,7 @@ export default function Styles() {
       <div style={bgBlue}>Blue background</div>
       {/* on your own */}
       <div style={bgGreen}>Green background</div>
+      <div style={bgGray}>Gray background</div>
     </div>
   );
 }
