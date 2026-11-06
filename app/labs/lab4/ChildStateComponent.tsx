@@ -14,7 +14,7 @@ export default function ChildStateComponent({
         id="wd-increment-child-state-click"
         className="me-2 rounded bg-green-600 px-3 py-1.5 text-sm font-medium text-white"
       >
-        Increment
+        Up
       </button>
       <button
         type="button"
@@ -22,7 +22,7 @@ export default function ChildStateComponent({
         id="wd-decrement-child-state-click"
         className="me-2 rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white"
       >
-        Decrement
+        Down
       </button>
       {/* on your own */}
       <button

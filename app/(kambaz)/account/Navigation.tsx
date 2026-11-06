@@ -19,7 +19,7 @@ export default function AccountNavigation() {
     <div id="wd-account-navigation" className="wd list-group rounded-none text-lg">
       {links.map((link) => (
         <Link key={link} href={`/account/${link}`} className={item(`/account/${link}`)}>
-          {link === "signin" ? "Signin" : link === "signup" ? "Signup" : "Profile"}
+          {link === "signin" ? "Sign in" : link === "signup" ? "Sign up" : "Profile"}
         </Link>
       ))}
     </div>
