@@ -1,19 +1,43 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import * as db from "../../../../database";
+import { useParams, useRouter } from "next/navigation";
+import {
+  useAssignmentsStore,
+  type Assignment,
+} from "../../../../store/assignmentsStore";
 
-const field =
-  "mb-1 block text-sm font-medium";
-const control =
-  "w-full rounded border border-neutral-300 bg-white px-3 py-2 text-sm";
+const field = "mb-1 block text-sm font-medium";
+const control = "w-full rounded border border-neutral-300 bg-white px-3 py-2 text-sm";
 
-export default async function AssignmentEditor({
-  params,
-}: {
-  params: Promise<{ cid: string; aid: string }>;
-}) {
-  const { cid, aid } = await params;
-  // on your own
-  const assignment = db.assignments.find((a) => a._id === aid);
+const blank = (course: string): Assignment => ({
+  _id: "new",
+  title: "New Assignment",
+  course,
+  description: "",
+  points: 100,
+  due: "2024-06-01",
+  available: "2024-05-20",
+  until: "2024-06-08",
+});
+
+export default function AssignmentEditor() {
+  const params = useParams();
+  const cid = String(params.cid);
+  const aid = String(params.aid);
+  const router = useRouter();
+  const assignments = useAssignmentsStore((state) => state.assignments);
+  const addAssignment = useAssignmentsStore((state) => state.addAssignment);
+  const updateAssignment = useAssignmentsStore((state) => state.updateAssignment);
+  const found = assignments.find((a) => a._id === aid);
+  const [draft, setDraft] = useState<Assignment>(found ?? blank(cid));
+
+  const save = () => {
+    if (aid === "new") addAssignment({ ...draft, course: cid });
+    else updateAssignment({ ...draft, course: cid });
+    router.push(`/courses/${cid}/assignments`);
+  };
 
   return (
     <div id="wd-assignments-editor" className="max-w-3xl">
@@ -23,12 +47,12 @@ export default async function AssignmentEditor({
         </label>
         <input
           id="wd-name"
-          defaultValue={assignment?.title ?? ""}
+          value={draft.title}
+          onChange={(e) => setDraft({ ...draft, title: e.target.value })}
           className={control}
         />
         <p>Assignment id: {aid}</p>
       </div>
-
       <div className="mb-4">
         <label htmlFor="wd-description" className={field}>
           Description
@@ -36,11 +60,11 @@ export default async function AssignmentEditor({
         <textarea
           id="wd-description"
           rows={5}
-          defaultValue={assignment?.description ?? ""}
+          value={draft.description}
+          onChange={(e) => setDraft({ ...draft, description: e.target.value })}
           className={control}
         />
       </div>
-
       <div className="mb-4">
         <label htmlFor="wd-points" className={field}>
           Points
@@ -48,91 +72,11 @@ export default async function AssignmentEditor({
         <input
           id="wd-points"
           type="number"
-          defaultValue={assignment?.points ?? 100}
+          value={draft.points}
+          onChange={(e) => setDraft({ ...draft, points: Number(e.target.value) })}
           className={control}
         />
       </div>
-
-      <div className="mb-4">
-        <label htmlFor="wd-group" className={field}>
-          Assignment Group
-        </label>
-        <select id="wd-group" defaultValue="ASSIGNMENTS" className={control}>
-          <option value="ASSIGNMENTS">ASSIGNMENTS</option>
-          <option value="QUIZZES">QUIZZES</option>
-          <option value="EXAMS">EXAMS</option>
-          <option value="PROJECT">PROJECT</option>
-        </select>
-      </div>
-
-      <div className="mb-4">
-        <label htmlFor="wd-display-grade-as" className={field}>
-          Display Grade as
-        </label>
-        <select
-          id="wd-display-grade-as"
-          defaultValue="POINTS"
-          className={control}
-        >
-          <option value="POINTS">Points</option>
-          <option value="PERCENTAGE">Percentage</option>
-          <option value="COMPLETE">Complete/Incomplete</option>
-        </select>
-      </div>
-
-      <div className="mb-4">
-        <label htmlFor="wd-submission-type" className={field}>
-          Submission Type
-        </label>
-        <select
-          id="wd-submission-type"
-          defaultValue="ONLINE"
-          className={control}
-        >
-          <option value="ONLINE">Online</option>
-          <option value="PAPER">On Paper</option>
-          <option value="NONE">No Submission</option>
-        </select>
-      </div>
-
-      <h4 className="mb-2 text-base font-semibold">Online Entry Options</h4>
-      <div className="mb-4 space-y-2 text-sm">
-        <div>
-          <input id="wd-text-entry" type="checkbox" className="me-2" />
-          <label htmlFor="wd-text-entry">Text Entry</label>
-        </div>
-        <div>
-          <input
-            id="wd-website-url"
-            type="checkbox"
-            defaultChecked
-            className="me-2"
-          />
-          <label htmlFor="wd-website-url">Website URL</label>
-        </div>
-        <div>
-          <input id="wd-media-recordings" type="checkbox" className="me-2" />
-          <label htmlFor="wd-media-recordings">Media Recordings</label>
-        </div>
-        <div>
-          <input id="wd-student-annotation" type="checkbox" className="me-2" />
-          <label htmlFor="wd-student-annotation">Student Annotation</label>
-        </div>
-        <div>
-          <input id="wd-file-upload" type="checkbox" className="me-2" />
-          <label htmlFor="wd-file-upload">File Uploads</label>
-        </div>
-      </div>
-
-      <h4 className="mb-2 text-base font-semibold">Assign</h4>
-
-      <div className="mb-4">
-        <label htmlFor="wd-assign-to" className={field}>
-          Assign to
-        </label>
-        <input id="wd-assign-to" defaultValue="Everyone" className={control} />
-      </div>
-
       <div className="mb-4">
         <label htmlFor="wd-due-date" className={field}>
           Due
@@ -140,11 +84,11 @@ export default async function AssignmentEditor({
         <input
           id="wd-due-date"
           type="date"
-          defaultValue={assignment?.due}
+          value={draft.due}
+          onChange={(e) => setDraft({ ...draft, due: e.target.value })}
           className={control}
         />
       </div>
-
       <div className="mb-4">
         <label htmlFor="wd-available-from" className={field}>
           Available from
@@ -152,11 +96,11 @@ export default async function AssignmentEditor({
         <input
           id="wd-available-from"
           type="date"
-          defaultValue={assignment?.available}
+          value={draft.available}
+          onChange={(e) => setDraft({ ...draft, available: e.target.value })}
           className={control}
         />
       </div>
-
       <div className="mb-4">
         <label htmlFor="wd-available-until" className={field}>
           Until
@@ -164,18 +108,11 @@ export default async function AssignmentEditor({
         <input
           id="wd-available-until"
           type="date"
-          defaultValue="2026-09-27"
+          value={draft.until ?? ""}
+          onChange={(e) => setDraft({ ...draft, until: e.target.value })}
           className={control}
         />
       </div>
-
-      <div className="mb-4">
-        <label htmlFor="wd-ai-editor-notes" className={field}>
-          Sample notes
-        </label>
-        <textarea id="wd-ai-editor-notes" rows={4} className={control} />
-      </div>
-
       <div className="flex justify-end gap-2">
         <Link
           href={`/courses/${cid}/assignments`}
@@ -184,13 +121,14 @@ export default async function AssignmentEditor({
         >
           Cancel
         </Link>
-        <Link
-          href={`/courses/${cid}/assignments`}
+        <button
+          type="button"
           id="wd-save"
-          className="rounded bg-red-600 px-4 py-2 text-sm font-medium text-white no-underline"
+          onClick={save}
+          className="rounded bg-red-600 px-4 py-2 text-sm font-medium text-white"
         >
           Save
-        </Link>
+        </button>
       </div>
     </div>
   );
